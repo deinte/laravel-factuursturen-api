@@ -2,9 +2,9 @@
 
 namespace Deinte\LaravelFactuurSturenApi\Tests;
 
+use Deinte\LaravelFactuurSturenApi\LaravelFactuurSturenApiServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Deinte\LaravelFactuurSturenApi\LaravelFactuurSturenApiServiceProvider;
 
 class TestCase extends Orchestra
 {
