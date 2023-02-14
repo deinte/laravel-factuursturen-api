@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Deinte\LaravelFactuurSturenApi\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelFactuurSturenApiCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-factuursturen-api';
 
     public $description = 'My command';
 
