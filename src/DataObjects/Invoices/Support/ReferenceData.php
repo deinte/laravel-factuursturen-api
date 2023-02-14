@@ -1,6 +1,6 @@
 <?php
 
-namespace Deinte\LaravelFactuurSturenApi\DataObjects\Invoices;
+namespace Deinte\LaravelFactuurSturenApi\DataObjects\Invoices\Support;
 
 use Deinte\LaravelFactuurSturenApi\DataObjects\BaseDataObject;
 
