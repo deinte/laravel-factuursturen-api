@@ -20,8 +20,8 @@ class InvoiceData extends BaseDataObject
     public function __construct(
         #[WithTransformer(ArrayableTransformer::class)]
         public ReferenceData|null $reference = null,
-        #[WithTransformer(ArrayableTransformer::class)]
-        public InvoiceLineData|null $lines = null,
+        #[DataCollectionOf(InvoiceLineData::class)]
+        public DataCollection|null $lines = null,
         public int|null $profile = null,
         public string|null $paymentcondition = null,
         public int|null $paymentperiod = null,
@@ -73,12 +73,15 @@ class InvoiceData extends BaseDataObject
 
     public function clone(string $action = 'send', array $properties = []): self
     {
+        /** @var InvoiceLineData $testLine */
+        $testLine = $this->lines->first();
+        $testLine->linetotal = null;
+
         $clone = new self();
         $clone->action = $action;
-        $clone->lines = $this->lines;
+        $clone->lines = InvoiceLineData::collection([$testLine]);
         $clone->reference = $this->reference;
         $clone->clientnr = $this->clientnr;
-
 
         return $clone;
     }

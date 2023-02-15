@@ -12,6 +12,11 @@ class FactuurSturenApi
     {
     }
 
+    public function api(): self
+    {
+        return $this;
+    }
+
     public function invoices(): InvoicesClient
     {
         return new InvoicesClient($this->client);

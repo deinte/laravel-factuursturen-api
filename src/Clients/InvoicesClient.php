@@ -13,7 +13,7 @@ class InvoicesClient extends BaseClient
     public function all(): DataCollection
     {
         /**
-         * __FUNCTION__
+         * TODO: Use proper way of caching
          */
         $result = Cache::remember('invoices', 600, function () {
             return $this->client->get(self::ENDPOINT)->json();
@@ -22,10 +22,19 @@ class InvoicesClient extends BaseClient
         return InvoiceData::collection($result);
     }
 
-    public function create(InvoiceData $invoice)
+    public function get(int $id): InvoiceData
     {
-        $response = $this->client->post('invoices', $invoice->toArray());
+        $response = $this->client->get(self::ENDPOINT . '/' . $id)->json();
 
-        ray()->send($response, $response->body())->purple();
+        if ($response === null) {
+            // TODO: Update exception to custom exception
+        }
+
+        return InvoiceData::from(array_values($response)[0]);
+    }
+
+    public function create(InvoiceData $invoice): null|int
+    {
+        return $this->client->post(self::ENDPOINT, $invoice)->body();
     }
 }

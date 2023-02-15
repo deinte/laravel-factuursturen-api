@@ -21,4 +21,9 @@ class BaseDataObject extends Data
             JsonNormalizer::class,
         ];
     }
+
+    public function toRequest(): array
+    {
+        return array_filter($this->toArray());
+    }
 }
