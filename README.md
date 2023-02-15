@@ -1,11 +1,18 @@
-# This is my package laravel-factuursturen-api
+# Laravel FactuurSturen API
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/deinte/laravel-factuursturen-api.svg?style=flat-square)](https://packagist.org/packages/deinte/laravel-factuursturen-api)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/deinte/laravel-factuursturen-api/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/deinte/laravel-factuursturen-api/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/deinte/laravel-factuursturen-api/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/deinte/laravel-factuursturen-api/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/deinte/laravel-factuursturen-api.svg?style=flat-square)](https://packagist.org/packages/deinte/laravel-factuursturen-api)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Laravel FactuurSturen API is a package that wraps the *FactuurSturen API*. It tries to make it as simple as possible to
+connect your Laravel application with FactuurSturen. Fetching your invoices is as easy as:
+
+```php
+use Deinte\LaravelFactuurSturenApi\Facades\FactuurSturenApi;
+
+$invoices = FactuurSturenApi::invoices()->all();
+```
 
 ## Support us
 
