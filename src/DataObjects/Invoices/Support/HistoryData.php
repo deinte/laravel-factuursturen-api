@@ -2,7 +2,6 @@
 
 namespace Deinte\LaravelFactuurSturenApi\DataObjects\Invoices\Support;
 
-use Carbon\Carbon;
 use Deinte\LaravelFactuurSturenApi\DataObjects\BaseDataObject;
 
 class HistoryData extends BaseDataObject

@@ -24,7 +24,7 @@ class InvoicesClient extends BaseClient
 
     public function get(int $id): InvoiceData
     {
-        $response = $this->client->get(self::ENDPOINT . '/' . $id)->json();
+        $response = $this->client->get(self::ENDPOINT.'/'.$id)->json();
 
         if ($response === null) {
             // TODO: Update exception to custom exception
