@@ -33,7 +33,7 @@ class InvoicesClient extends BaseClient
         return InvoiceData::from(array_values($response)[0]);
     }
 
-    public function create(InvoiceData $invoice): null|int
+    public function create(InvoiceData $invoice): null|string
     {
         return $this->client->post(self::ENDPOINT, $invoice)->body();
     }
