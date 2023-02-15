@@ -70,19 +70,4 @@ class InvoiceData extends BaseDataObject
         public string $sendmethod = 'mail',
     ) {
     }
-
-    public function clone(string $action = 'send', array $properties = []): self
-    {
-        /** @var InvoiceLineData $testLine */
-        $testLine = $this->lines->first();
-        $testLine->linetotal = null;
-
-        $clone = new self();
-        $clone->action = $action;
-        $clone->lines = InvoiceLineData::collection([$testLine]);
-        $clone->reference = $this->reference;
-        $clone->clientnr = $this->clientnr;
-
-        return $clone;
-    }
 }
